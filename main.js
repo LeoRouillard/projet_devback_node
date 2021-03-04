@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const fileUpload = require('express-fileupload');
+
 const app = express();
+const port = 3000;
 
 const Users = require('./modelUsers');
 
@@ -62,4 +64,4 @@ app.post('/users', (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(port, () => { console.log(`Le serveur est lancé sur le port ${port}`) });
